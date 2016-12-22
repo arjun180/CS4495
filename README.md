@@ -2,7 +2,7 @@
 This is a github repository for the CS 4495 Computer Vision class
 
 
-# Problem Set 2 
+## Problem Set 2 
 
 Stereo Window 
 
@@ -10,7 +10,7 @@ Stereo Window
 2. Implementation was done using SSD and normalized correlation
 3. Disparity image and 3D depth plot is computed and displayed
 
-# Problem Set 3
+## Problem Set 3
 
 Geometry
 
@@ -18,7 +18,7 @@ Geometry
 2. Relationship between the two views of the camera is established.
 
 
-# Problem Set 4
+## Problem Set 4
 
 Harris SIFT and RANSAC
 
@@ -26,10 +26,9 @@ Harris SIFT and RANSAC
 2. key points used to implement SIFT. RANSAC used to find the best matches using similarity algorithm.
 
 
-# Problem Set 6
+## Problem Set 6
 
 Particle Filter
 
 1. Predict where the object would be in the enxt frame
 2. Particle filter, which would predict by sampling particles based on their probability
- 
