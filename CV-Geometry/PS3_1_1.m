@@ -126,7 +126,6 @@ v=[-0.3645;
  
  for i=2:1:20;
  
- 
   A=[x(i) y(i) z(i) 1  0     0    0   0   -u(i)*x(i) -u(i)*y(i) -u(i)*z(i);
        
       0   0     0   0 x(i) y(i) z(i)  1    -v(i)*x(i) -v(i)*y(i) -v(i)*z(i)];  % Concatenating to form formula
@@ -139,8 +138,7 @@ v=[-0.3645;
  B1=vertcat(B1,B);
 
 
-  end
- 
+end
  
  
 m=A1\B1;
@@ -149,18 +147,14 @@ m=A1\B1;
 m1= [m(1) m(2) m(3) m(4);
      m(5) m(6) m(7) m(8);
      m(9) m(10) m(11) 1];
-  
-  
-  
+
    L=A1*m;
   
 % For finding residual
   
-
    for k=1:20
        
-       diff(k)=(L(k).^2)-(B1(k).^2);
-       
+       diff(k)=(L(k).^2)-(B1(k).^2)      
    end
    
 sum1=sum(diff(k));

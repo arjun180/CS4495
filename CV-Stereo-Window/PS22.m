@@ -7,8 +7,6 @@ ImgRight= im2double(rgb2gray(imread('http://www.cc.gatech.edu/~afb/classes/CS449
 ImgLeft=imresize(ImgLeft,[256 256]);
 ImgRight=imresize(ImgRight,[256 256]);
 
-
-
 [rows cols]= size(ImgLeft);
 [tplrows tplcols]= size(ImgRight);
 
@@ -17,26 +15,16 @@ disp=zeros(256,256);
 ssdnew=zeros(256,256);
 
 
-
-
-
-
 win=7;
 
- for m=1:256-win+1
-     
-    
-    
+ for m=1:256-win+1    
     for n=1:256-win+1
         
         for k = 1:256-win+1
-            
           
-            
             for i=1:win-1
                 for j=1:win-1
-            
-            
+                      
                      sum1(i,j)=(ImgLeft(i+m,j+n)- ImgRight(i+m,j+k)).^2;
             
                 end
@@ -44,15 +32,6 @@ win=7;
            
             
        ssd(k)=sum(sum(sum1));
-        
-%      if(ssd(k))==0
-%        
-%      else
-%          
-%          ssd(k)=100;
-%      end
-     
-     
          
          
      end
@@ -64,11 +43,6 @@ win=7;
     
     end
      
-    
-    
-     
-  
-        
 
  
   for m=1:254

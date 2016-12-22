@@ -14,26 +14,19 @@ ImgRight=imresize(ImgRight,[128 128]);
 
 win=5;
  for m=1:128-win+1
-     
-    
-    
+        
     for n=1:128-win+1
         for k = 1:128-win+1
-            
-          
-            
+                  
             for i=1:win-1
-                for j=1:win-1
-            
+                for j=1:win-1  
             
                      sum1(i,j)=(ImgRight(i+m,j+n)- ImgLeft(i+m,j+k)).^2;
             
                 end
             end
-           
-            
+                
        ssd(k)=sum(sum(sum1));
-        
     
        
     if(ssd(k))==0
@@ -42,12 +35,8 @@ win=5;
           
           ssd(k)=100;
     end
-     
-     
-         
-         
-     end
-    
+          
+    end
         
     ssdnew(m,n)=max(find(ssd==min(ssd(:))));
     
@@ -55,11 +44,6 @@ win=5;
     
     end
      
-    
-    
-     
-  
-        
 
  
   for m=1:118

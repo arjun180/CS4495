@@ -20,8 +20,6 @@ I_blur=imfilter(I,H,'replicate');
 
 
 [Ix Iy]=imgradientxy(I_blur);
-
-
  
 I_adjoin=[Ix Iy];
 
@@ -30,16 +28,12 @@ r=1;
 w=1;
 
 
-
-
 R=zeros(480,640);
-
-
 
 for i=2:(rows-1)
     
     
-for j=2:(cols-1)
+  for j=2:(cols-1)
 
 
 w1(i,j)=sum(sum(w.*(Ix((i-r):(i+r),(j-r):(j+r)).^2)));    
@@ -55,9 +49,7 @@ M=[w1(i,j) w3(i,j);w3(i,j) w2(i,j)];
 R(i,j)=det(M)-(0.4)*trace((M)^2);
 
 
-
-
-end
+   end
 end
 
 %figure,

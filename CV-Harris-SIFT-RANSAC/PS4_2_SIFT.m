@@ -14,33 +14,22 @@ H=fspecial('gaussian',[3 3],1);
 
 I_blur=imfilter(I,H,'replicate');
  
-
-
 [rows cols]=size(I_blur);
-
 
 [Ix Iy]=imgradientxy(I_blur); % Computing gradient
 
-
 r=1;  % Radius
 
-
-
 w=1; % Assigning weight
-
-
-
-
 
 
 R=zeros(480,640);
 
 
-
 for i=2:(rows-1)
     
     
-for j=2:(cols-1)
+     for j=2:(cols-1)
 
 
 w1(i,j)=sum(sum(w.*(Ix((i-r):(i+r),(j-r):(j+r)).^2)));    
@@ -55,10 +44,7 @@ M=[w1(i,j) w3(i,j);w3(i,j) w2(i,j)];  % Determining M
  
 R(i,j)=det(M)-(0.4)*trace((M)^2);  % Determining R
 
-
-
-
-end
+    end
 end
 
 
@@ -76,7 +62,7 @@ for i=2:(rows-1)
        
        R(i,j)=0;
        
-end
+   end
 end
   
 end
@@ -99,22 +85,10 @@ if(R(i,j)<threshold)
 
 
 end
-
-
-
 end
 
 
 [Xp Yp]=find(R>0);
-
-% figure,
-% imshow('simA.jpg');
-% 
-% hold on
-% 
-% plot(Yp,Xp,'o');
-% 
-% hold off
 
 
 
@@ -171,15 +145,6 @@ hold off
 
 
 
-
-
-
-
-
-
-
-
-
 %%%%%%%%%%%%%%%%%%%% For Second image%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -194,19 +159,13 @@ H1=fspecial('gaussian',[3 3],1);
 I_blurb=imfilter(Ib,H1,'replicate');
  
 
-
 [rows1 cols1]=size(I_blurb);
-
-
 [Ixb Iyb]=imgradientxy(I_blurb);
 
  
 
 r1=1;
 w1=1;
-
-
-
 
 R1=zeros(480,640);
 
@@ -215,7 +174,7 @@ R1=zeros(480,640);
 for i=2:(rows1-1)
     
     
-for j=2:(cols1-1)
+     for j=2:(cols1-1)
 
 
 w11(i,j)=sum(sum(w1.*(Ixb((i-r1):(i+r1),(j-r1):(j+r1)).^2)));    
@@ -231,9 +190,7 @@ M1=[w11(i,j) w33(i,j);w33(i,j) w22(i,j)]; % Computing M
 R1(i,j)=det(M1)-(0.4)*trace((M1)^2); % Computing R
 
 
-
-
-end
+    end
 end
 
 
@@ -251,7 +208,7 @@ for i=2:(rows1-1)
        
        R1(i,j)=0;
        
-end
+   end
 end
   
 end

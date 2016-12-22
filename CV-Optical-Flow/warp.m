@@ -13,7 +13,5 @@ M=find(isnan(warpi2));
 warpi2(M)=warpi3(M);
  
 
-
-
 end
 

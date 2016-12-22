@@ -1,5 +1,6 @@
 
 %Q1.1
+
 clear all
 vr = VideoReader('pres_debate.avi');
 numFrames = get(vr, 'NumberOfFrames');
@@ -12,12 +13,9 @@ N=100;
 
 Xt=randsample(220:360,N);
 Yt=randsample(205:330,N);
- 
-
 
 Xt_check=Xt;
 Yt_check=Yt;
-
 
 for k=1:46
 
@@ -27,9 +25,6 @@ image1= im2double(read(vr,k));
 
 [X Y]=size(image);
 
-
-
-
 if(k==1)
     
  Unew=320;
@@ -38,6 +33,7 @@ if(k==1)
 
 else   
 
+
 %Computing MSE of randomly selected particels
 
 for i=1:N
@@ -45,10 +41,9 @@ for i=1:N
 MSE(i)=sum(sum((1/(129*103))*((image2(320:423,175:304)-image((320:423)+Xt(i)-ceil(129/2),(175:304)+Yt(i)-ceil(103/2)))).^2));
 
 end
-
-
  
 end
+
 
 %Adding Gaussian noise
 
@@ -120,7 +115,6 @@ close(vidobj);
 implay('pres_debate1.avi');
 
 
-
 %%%%%%%% Extracting frames%%%%%%%%
 
 
@@ -137,25 +131,5 @@ hold off
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  
 
-%fr = readFrame(vr);

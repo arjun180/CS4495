@@ -26,18 +26,13 @@ ssdnew=zeros(256,256);
 win=5;
 
  for m=1:256-win+1
-     
-    
     
     for n=1:256-win+1
         
         for k = 1:256-win+1
-            
-          
-            
+                      
             for i=1:win-1
                 for j=1:win-1
-            
             
                      sum1(i,j)=(ImgRight(i+m,j+n)- ImgLeft(i+m,j+k)).^2;
             
@@ -46,30 +41,14 @@ win=5;
            
             
        ssd(k)=sum(sum(sum1));
-        
-%      if(ssd(k))==0
-%        
-%      else
-%          
-%          ssd(k)=100;
-%      end
-     
-     
-         
-         
-     end
-    
-        
+           
+     end      
         ssdnew(m,n)=min(find(ssd==min(ssd(:))));
     
     end
     
     end
      
-    
-    
-     
-  
         
 
  

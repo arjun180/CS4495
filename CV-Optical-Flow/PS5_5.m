@@ -24,16 +24,11 @@ k=n_max;
 
 for K=k:-1:1
 
-    
-
-    
 
 Lk=reduce_func_LK(L,K);
 
 Rk=reduce_func_LK(R,K);
-
-
-    
+ 
 
 if (K==n_max)
     
@@ -43,10 +38,7 @@ if (K==n_max)
 
 
 else
-    
-    
-    
-    
+      
  if(size(Lk,1)~=(Ut(1,1))||size(Lk,2)~=Ut(1,2))
     
     
@@ -122,31 +114,18 @@ E2=(imfilter(I2_expand,w));
 E1(isnan(E1))=0;
 
 E2(isnan(E2))=0;
- 
-
 
  
 U_1=2*E1;
-   
-
+  
 V_1=2*E2;
-
-
-
-
-
 
 
 end
 
 
-
-
-
 %%%%%%%%%%%%%%%%%%%%%% Warping image 2 back to
 %%%%%%%%%%%%%%%%%%%%%% image%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 
 
  
@@ -164,10 +143,6 @@ M=find(isnan(warpi2));
 warpi2(M)=warpi3(M);
  
 Wk=warpi2;
-
-
-
-
 
 
 
@@ -259,16 +234,7 @@ V=Vnew;
  Vt=2*size(V);
 
 
-
-
-
-
-
-
-
 end
-
-
 
 
 

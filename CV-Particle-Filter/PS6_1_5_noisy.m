@@ -13,8 +13,6 @@ N=100;
 Xt=randsample(220:360,N);
 Yt=randsample(205:330,N);
  
-
-
 Xt_check=Xt;
 Yt_check=Yt;
 
@@ -28,8 +26,6 @@ image1= im2double(read(vr,k));
 [X Y]=size(image);
 
 
-
-
 if(k==1)
     
  Unew=320;
@@ -37,6 +33,7 @@ if(k==1)
 
 
 else   
+
 
 %Computing MSE of randomly selected particels
 
@@ -49,6 +46,7 @@ end
 
  
 end
+
 
 %Adding Gaussian noise
 

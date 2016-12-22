@@ -16,9 +16,6 @@ figure,imshow(ImgRight);
 ImgLeft=ImgLeft+(0.01*ImgLeft);
 ImgRight=ImgRight + (0.01*ImgRight);
 
-
-
-
 [rows cols]= size(ImgLeft);
 [tplrows tplcols]= size(ImgRight);
 
@@ -26,53 +23,34 @@ disp=zeros(256,256);
 ssdnew=zeros(256,256);
 
 
-
-
-
-
 win=7;
 
  for m=1:256-win+1
-     
-    
     
     for n=1:256-win+1
         
         for k = 1:256-win+1
-            
-          
-            
+                  
             for i=1:win-1
                 for j=1:win-1
-            
-            
+          
                      sum1(i,j)=(ImgRight(i+m,j+n)- ImgLeft(i+m,j+k)).^2;
             
                 end
             end
            
             
-       ssd(k)=sum(sum(sum1));
-        
-
-     
-         
+       ssd(k)=sum(sum(sum1));         
          
      end
-    
-        
+
         ssdnew(m,n)=min(find(ssd==min(ssd(:))));
     
     end
     
     end
      
-    
-    
-     
-  
-        
-
+       
  
   for m=1:254
         for n= 1:254

@@ -11,14 +11,7 @@ ImgLeft=imresize(ImgLeft,[256 256]);
 ImgRight=imresize(ImgRight,[256 256]);
 
 Imgl=imnoise(ImgLeft,'gaussian',0,0.01);
-
-
 Imgr=imnoise(ImgLeft,'gaussian',0,0.01);
-
-
-
-
-
 
 
 [rows cols]= size(Imgl);
@@ -30,21 +23,14 @@ ssdnew=zeros(256,256);
 
 
 
-
-
-
 win=7;
 
- for m=1:256-win+1
-     
-    
+ for m=1:256-win+1 
     
     for n=1:256-win+1
         
         for k = 1:256-win+1
-            
-          
-            
+        
             for i=1:win-1
                 for j=1:win-1
             
@@ -53,14 +39,9 @@ win=7;
             
                 end
             end
-           
-            
-       ssd(k)=sum(sum(sum1));
-        
-%      
-     
-         
-         
+                       
+       ssd(k)=sum(sum(sum1)); 
+    
      end
     
         
@@ -71,10 +52,6 @@ win=7;
     end
      
     
-    
-     
-  
-        
 
  
  for m=1:254

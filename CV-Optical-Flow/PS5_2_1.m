@@ -8,8 +8,6 @@ figure,
 
 imshow(I);
 n=3;
-
-
 for i=1:n
 
 I_reduce=reduce_func_LK(I,1);
@@ -17,10 +15,7 @@ I_reduce=reduce_func_LK(I,1);
 figure,
 imshow(I_reduce);
 
-
 I=I_reduce;
-
-
 
 
 end

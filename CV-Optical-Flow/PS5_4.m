@@ -13,8 +13,6 @@ clear all
 
 
 
-
-
 L=im2double(((imread('Shift0.png'))));
 
 R=im2double(((imread('ShiftR40.png'))));
@@ -24,26 +22,17 @@ g=[0.05 0.25 0.4 0.25 0.05];
 
 w=g.'*g;
 
-
-
 n_max=7;         
 
 k=n_max;
 
 
-
-
 for K=k:-1:1
 
-    
-
-    
 
 Lk=reduce_func_LK(L,K);
 
 Rk=reduce_func_LK(R,K);
-
-
     
 
 if (K==n_max)
@@ -134,18 +123,10 @@ E1(isnan(E1))=0;
 
 E2(isnan(E2))=0;
  
-
-
  
 U_1=2*E1;
    
-
 V_1=2*E2;
-
-
-
-
-
 
 
 end
@@ -175,10 +156,6 @@ M=find(isnan(warpi2));
 warpi2(M)=warpi3(M);
  
 Wk=warpi2;
-
-
-
-
 
 
 
@@ -217,10 +194,6 @@ wIyt = imfilter(Iyt, fspecial('gaussian', wsize, wsig));
 
 
 
-
-
-
-
 Dx=zeros(size(img1,1),size(img1,2));
 
 Dy=zeros(size(img1,1),size(img1,2));
@@ -228,7 +201,7 @@ Dy=zeros(size(img1,1),size(img1,2));
 
 for i=1:size(img1,1)
      
-for j=1:size(img1,2)
+    for j=1:size(img1,2)
 
 
 
@@ -242,14 +215,13 @@ B=[-wIxt(i,j); -wIyt(i,j)];
      
  
 
-
 Dx(i,j)=X(1,1);
  
 Dy(i,j)=X(2,1);
 
 
 
-end
+    end
 
 end
 
@@ -268,13 +240,6 @@ V=Vnew;
  Ut=2*size(U);
 
  Vt=2*size(V);
-
-
-
-
-
-
-
 
 
 end

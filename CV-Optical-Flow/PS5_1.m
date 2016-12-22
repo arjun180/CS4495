@@ -57,8 +57,6 @@ for i=1:size(I1,1)
 end
 
 
-
-
 figure,
 imagesc(U);
 
